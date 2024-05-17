@@ -23,5 +23,9 @@ module WeatherApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    OpenWeather::Client.configure do |config|
+      config.api_key = ENV['OPEN_WEATHER_KEY']
+      config.user_agent = 'OpenWeather Ruby Client/1.0'
+    end
   end
 end

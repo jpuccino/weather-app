@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @weather_search %>
+
+<div>
+  <%= link_to "Previous searches", weather_searches_path %>
+
+  <%= link_to "Start a new weather search", new_weather_search_path %>
+</div>

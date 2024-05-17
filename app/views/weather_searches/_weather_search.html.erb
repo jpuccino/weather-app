@@ -1,0 +1,42 @@
+<div id="<%= dom_id weather_search %>">
+  <p>
+    <strong>Last Updated:</strong>
+    <%= weather_search.updated_at %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= weather_search.city %>
+  </p>
+
+  <p>
+    <strong>State:</strong>
+    <%= weather_search.state %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= weather_search.country %>
+  </p>
+
+  <p>
+    <strong>Zip:</strong>
+    <%= "%05d" % weather_search.zip %>
+  </p>
+
+  <p>
+    <strong>Current Temperature (F):</strong>
+    <%= weather_search.temp_f %>
+  </p>
+
+  <p>
+    <strong>High for Today (F):</strong>
+    <%= weather_search.temp_max_f %>
+  </p>
+
+  <p>
+    <strong>Low for Today (F):</strong>
+    <%= weather_search.temp_min_f %>
+  </p>
+
+</div>
