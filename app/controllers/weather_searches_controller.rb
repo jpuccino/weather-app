@@ -12,7 +12,7 @@ class WeatherSearchesController < ApplicationController
 
   # GET /weather_searches/new
   def new
-    @weather_search = WeatherSearch.new
+    @weather_search = WeatherSearch.new(country: 'US')
   end
 
   # GET /weather_searches/1/edit
@@ -29,8 +29,7 @@ class WeatherSearchesController < ApplicationController
                                               state: weather_search_params[:state],
                                               country: weather_search_params[:country] || 'US')
                       end
-
-    if @weather_search.present? && (@weather_search.updated_at? + 30.min) > DateTime.now
+    if @weather_search.present? && (@weather_search.updated_at + 30.minutes) > DateTime.now
       @cached_weather = true
     else
       ows_params = weather_search_params.slice(:city, :state, :country, :zip).to_h.symbolize_keys
